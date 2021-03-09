@@ -7,3 +7,5 @@ And then inside the dotfiles directory just run: <br>
 ```stow -t ~ *```
 
 And configure the GTK themes in lxappearance.
+
+![Screenshot: ](screenshot.png)
