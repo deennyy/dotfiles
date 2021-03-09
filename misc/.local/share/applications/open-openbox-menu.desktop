@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=xdotool key ctrl+alt+space
+Type=Application
+Icon=/usr/share/pixmaps/archlinux-logo.svg
