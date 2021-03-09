@@ -430,12 +430,27 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>lockdunst</command>
+        <command>~/lockdunst</command>
       </action>
     </keybind>
     <keybind key="S-W-z">
       <action name="Execute">
-        <command>nightcolor</command>
+        <command>~/nightcolor</command>
+      </action>
+    </keybind>
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>~/rofimount</command>
+      </action>
+    </keybind>
+    <keybind key="W-u">
+      <action name="Execute">
+        <command>~/rofiunmount</command>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <command>~/rofivpn</command>
       </action>
     </keybind>
   </keyboard>

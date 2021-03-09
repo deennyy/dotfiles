@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#qdbus org.kde.KWin /Compositor resume
+dunstctl set-paused true
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
+picom
