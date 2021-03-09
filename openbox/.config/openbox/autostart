@@ -24,7 +24,6 @@ polkit-dumb-agent &
 volctl &
 numlockx &
 redshift-gtk -l 42.698334:23.319941 &
-nmcli con up id ivpn &
 dunst &
 setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:alt_shift_toggle &
 xcape -e 'Super_L=Control_L|Alt_L|space' &
