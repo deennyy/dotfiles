@@ -13,8 +13,8 @@ Download the cursor theme and put it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
 Put this in ```/etc/environment```: <br>
-```XDG_CURRENT_DESKTOP=Unity
-QT_QPA_PLATFORMTHEME=gtk2```
+``XDG_CURRENT_DESKTOP=Unity 
+QT_QPA_PLATFORMTHEME=gtk2``
 
 And then inside the dotfiles directory remove the README and screenshot files and run: <br>
 ```stow -t ~ *```
