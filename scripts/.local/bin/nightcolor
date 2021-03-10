@@ -1,10 +1,6 @@
 #!/bin/sh
 
-#qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "Toggle Night Color"
-#sleep 1
-#qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "Toggle Night Color"
-
-killall redshift
 killall redshift-gtk
+killall redshift
 sleep 1
-redshift-gtk -l 42.698334:23.319941
+redshift-gtk -l 42.698334:23.319941 &
