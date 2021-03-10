@@ -20,7 +20,7 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-And then inside the dotfiles directory remove the README and screenshot files and run: <br>
+And then inside the dotfiles directory remove the README and screenshot files and run: (you will probably need to remove ~/.bashrc and any other already existing files)<br>
 ```
 stow -t ~ *
 ```
