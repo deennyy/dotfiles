@@ -28,16 +28,16 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
-    {item => ['shutdown now', 'Shutdown', 'system-shutdown']},
-    {item => ['reboot', 'Reboot', 'system-reboot']},
-    {item => ['lockdunst', 'Lock', 'system-lock-screen']},
     {exit => ['Exit', 'application-exit']},
+    {item => ['lockdunst', 'Lock', 'system-lock-screen']},
+    {item => ['reboot', 'Reboot', 'system-reboot']},
+    {item => ['shutdown now', 'Shutdown', 'system-shutdown']},
 
     {sep => undef},
 
     #          COMMAND                 LABEL              ICON
     {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
-    {item => ['alacritty',            'Terminal',     'utilities-terminal']},
+    {item => ['tabbed alacritty --embed',            'Terminal',     'utilities-terminal']},
     {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
     {item => ['rofi -show run',            'Run command',  'system-run']},
 
