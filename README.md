@@ -5,7 +5,7 @@ Install the following packages with your favorite AUR helper: <br>
 stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git volctl
 numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme
 qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-fancy-git neofetch
-noto-fonts-emoji noto-fonts-cjk obconf
+noto-fonts-emoji noto-fonts-cjk obconf zsh-syntax-highlighting zsh-autosuggestions
 ```
 
 Download the openbox theme and install it with ```obconf```: <br>
@@ -28,3 +28,10 @@ stow -t ~ *
 And configure the GTK themes in ```lxappearance```.
 
 ![Screenshot: ](screenshot.png)
+
+zsh configuration:
+```
+touch "$HOME/.cache/zshhistory"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+chsh $USER
+```
