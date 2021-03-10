@@ -8,7 +8,7 @@ qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lo
 noto-fonts-emoji noto-fonts-cjk obconf
 ```
 
-Download the openbox theme and put it in ```~/.themes```: <br>
+Download the openbox theme and install it with ```obconf```: <br>
 https://www.gnome-look.org/p/1017696/
 
 Download the cursor theme and put it in ```~/.icons```: <br>
