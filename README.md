@@ -14,7 +14,7 @@ https://www.gnome-look.org/p/1017696/
 Download the cursor theme and extract it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
-Put this in ```/etc/environment```:
+Add this to ```/etc/environment```:
 ```
 XDG_CURRENT_DESKTOP=Unity 
 QT_QPA_PLATFORMTHEME=gtk2
