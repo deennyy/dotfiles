@@ -29,7 +29,7 @@ And configure the GTK themes in ```lxappearance```.
 
 ![Screenshot: ](screenshot.png)
 
-zsh configuration:
+zsh setup:
 ```
 touch "$HOME/.cache/zshhistory"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
