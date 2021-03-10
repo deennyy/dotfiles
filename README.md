@@ -1,15 +1,15 @@
 # dotfiles
 
 Install the following packages with your favorite AUR helper: <br>
-```stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git volctl``` <br>
-```numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme``` <br>
+```stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git volctl numlockx``` <br>
+```redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme``` <br>
 ```qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-fancy-git``` <br>
 ```noto-fonts-emoji noto-fonts-cjk```
 
-Download the openbox theme and put it in ```~/.themes```:
+Download the openbox theme and put it in ```~/.themes```: <br>
 https://www.gnome-look.org/p/1017696/
 
-Download the cursor theme and put it in ```~/.icons```:
+Download the cursor theme and put it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
 And then inside the dotfiles directory remove the README and screenshot files and run: <br>
