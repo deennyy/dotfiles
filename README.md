@@ -2,10 +2,10 @@
 
 Install the following packages with your favorite AUR helper: <br>
 ```
-stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git xcape
-volctl numlockx redshift opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance xdotool 
-papirus-icon-theme qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin neofetch 
-i3lock-fancy-git noto-fonts-emoji noto-fonts-cjk obconf
+stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git volctl
+numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme
+qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-fancy-git neofetch
+noto-fonts-emoji noto-fonts-cjk obconf
 ```
 
 Download the openbox theme and install it with ```obconf```: <br>
