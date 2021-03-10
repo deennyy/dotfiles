@@ -25,6 +25,6 @@ And then inside the dotfiles directory remove the ```README.md``` and ```screens
 stow -t ~ *
 ```
 
-And configure the GTK themes in lxappearance.
+And configure the GTK themes in ```lxappearance```.
 
 ![Screenshot: ](screenshot.png)
