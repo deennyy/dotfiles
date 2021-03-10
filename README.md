@@ -2,7 +2,7 @@
 
 Install the following packages with your favorite AUR helper: <br>
 ```
-stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git asdasd
+stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-dumb-agent-git asdas
 volctl numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance xdotool 
 papirus-icon-theme qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin neofetch 
 i3lock-fancy-git noto-fonts-emoji noto-fonts-cjk obconf
