@@ -11,7 +11,7 @@ noto-fonts-emoji noto-fonts-cjk obconf zsh-syntax-highlighting zsh-autosuggestio
 Download the openbox theme and install it with ```obconf```: <br>
 https://www.gnome-look.org/p/1017696/
 
-Download the cursor theme and put it in ```~/.icons```: <br>
+Download the cursor theme and extract it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
 Put this in ```/etc/environment```:
