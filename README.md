@@ -20,7 +20,7 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-Then inside the ```dotfiles``` directory remove the ```README.md``` and ```screenshot.png``` files and run: (remove any already existing files)
+Then remove the ```README.md```, ```screenshot.png``` and any already existing files and run:
 ```
 stow -t ~ *
 ```
