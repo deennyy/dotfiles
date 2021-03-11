@@ -6,20 +6,20 @@
 
 unmountusb() {
 	[ -z "$drives" ] && exit
-	chosen="$(echo "$drives" | dmenu -i -p "Unmount which drive?")" || exit 1
+	chosen="$(echo "$drives" | rofi -i -p "Unmount which drive?" -dmenu)" || exit 1
 	chosen="$(echo "$chosen" | awk '{print $1}')"
 	[ -z "$chosen" ] && exit
 	sudo -A umount "$chosen" && notify-send "💻 USB unmounting" "$chosen unmounted."
 	}
 
 unmountandroid() { \
-	chosen="$(awk '/jmtpfs/ {print $2}' /etc/mtab | dmenu -i -p "Unmount which device?")" || exit 1
+	chosen="$(awk '/jmtpfs/ {print $2}' /etc/mtab | rofi -i -p "Unmount which device?" -dmenu)" || exit 1
 	[ -z "$chosen" ] && exit
 	sudo -A umount -l "$chosen" && notify-send "🤖 Android unmounting" "$chosen unmounted."
 	}
 
 asktype() { \
-	choice="$(printf "USB\\nAndroid" | dmenu -i -p "Unmount a USB drive or Android device?")" || exit 1
+	choice="$(printf "USB\\nAndroid" | rofi -i -p "Unmount a USB drive or Android device?" -dmenu)" || exit 1
 	case "$choice" in
 		USB) unmountusb ;;
 		Android) unmountandroid ;;
