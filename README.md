@@ -20,7 +20,7 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-Then remove the ```README.md```, ```screenshot.png``` and any already existing files and run:
+Then remove ```README.md```, ```screenshot.png``` and any already existing files and run:
 ```
 stow -t ~ *
 ```
