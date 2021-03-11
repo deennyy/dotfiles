@@ -37,5 +37,6 @@ If you wanna use the mount/unmount scripts, install ```ssh-askpass-fullscreen```
 ```
 Path askpass /usr/lib/openssh/ssh-askpass-fullscreen
 ```
+Also install jmtpfs (AUR) if you wanna mount Android phones and dosfstools if you wanna mount FAT formatted drives.
 
 ![Screenshot: ](screenshot.png)
