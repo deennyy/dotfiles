@@ -16,6 +16,6 @@ connect() { \
 
 if [ "$action" = "Connect" ]; then
     connect
-else
+elif [ "$action" = "Disconnect" ]; then
     disconnect
 fi
