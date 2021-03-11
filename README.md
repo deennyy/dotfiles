@@ -25,7 +25,7 @@ Then remove ```README.md```, ```screenshot.png``` and any already existing files
 stow -t ~ *
 ```
 
-And configure the GTK themes in ```lxappearance```. <br> (make sure font hinting style is set to slight and antialiasing is on if you stowed fonts)
+And set the GTK themes in ```lxappearance```. (make sure font hinting style is set to slight and antialiasing is on if you stowed fonts)
 
 zsh setup:
 ```
