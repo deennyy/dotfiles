@@ -33,7 +33,7 @@ touch "$HOME/.cache/zshhistory"
 chsh $USER
 ```
 
-If you wanna use the rofimount/unmount scripts, install ```ssh-askpass-fullscreen``` (AUR) and add this to ```/etc/sudo.conf```
+If you wanna use the mount/unmount scripts, install ```ssh-askpass-fullscreen``` (AUR) and add this to ```/etc/sudo.conf```
 ```
 Path askpass /usr/lib/openssh/ssh-askpass-fullscreen
 ```
