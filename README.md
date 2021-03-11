@@ -20,17 +20,17 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-And then inside the ```dotfiles``` directory remove the ```README.md``` and ```screenshot.png``` files and run: <br> (you will probably need to remove any already existing files)
+Then inside the ```dotfiles``` directory remove the ```README.md``` and ```screenshot.png``` files and run: <br> (you will probably need to remove any already existing files)
 ```
 stow -t ~ *
 ```
 
 And configure the GTK themes in ```lxappearance```.
 
-![Screenshot: ](screenshot.png)
-
 zsh setup:
 ```
 touch "$HOME/.cache/zshhistory"
 chsh $USER
 ```
+
+![Screenshot: ](screenshot.png)
