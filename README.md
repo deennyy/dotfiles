@@ -25,7 +25,7 @@ Then inside the ```dotfiles``` directory remove the ```README.md``` and ```scree
 stow -t ~ *
 ```
 
-And configure the GTK themes in ```lxappearance```.
+And configure the GTK themes in ```lxappearance```. (make sure font hinting style is set to slight if you stowed fonts)
 
 zsh setup:
 ```
