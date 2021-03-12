@@ -1,8 +1,11 @@
 #!/bin/sh
 
+[ -z "$(nmcli connection show | grep -E "(wireguard|openvpn)")" ] && echo "No wireguard or openvpn connections found" && exit
+
 action="$(printf "Connect\\nDisconnect" | rofi -i -p "Action?" -dmenu)"
 
 disconnect() { \
+    [ -z "$(nmcli connection show --active | grep -E "(wireguard|openvpn)")" ] && echo "No active wireguard or openvpn connections found" && exit
     chosen="$(nmcli connection show --active | grep -E "(wireguard|openvpn)" | rofi -i -p "Connection?" -dmenu)"
     final="$(echo "$chosen" | awk '{print $1}')"
     nmcli con down id "$final"
