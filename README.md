@@ -35,13 +35,15 @@ touch "$HOME/.cache/zshhistory"
 chsh $USER
 ```
 
-## If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
+# Mount scripts:
+If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
 ```
 Path askpass /usr/lib/ssh/gnome-ssh-askpass2
 ```
 Also install ```jmtpfs``` (AUR) if you wanna mount Android phones and ```dosfstools``` if you wanna mount FAT drives.
 
-# If you stowed audio edit ```/etc/pulse/default.pa``` and change:
+# Audio:
+If you stowed audio edit ```/etc/pulse/default.pa``` and change:
 ```
 load-module module-udev-detect
 ```
