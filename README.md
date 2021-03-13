@@ -33,9 +33,9 @@ touch "$HOME/.cache/zshhistory"
 chsh $USER
 ```
 
-If you wanna use the mount/unmount scripts, install ```ssh-askpass-fullscreen``` (AUR) and add this to ```/etc/sudo.conf```:
+If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
 ```
-Path askpass /usr/lib/openssh/ssh-askpass-fullscreen
+Path askpass /usr/lib/ssh/gnome-ssh-askpass2
 ```
 Also install ```jmtpfs``` (AUR) if you wanna mount Android phones and ```dosfstools``` if you wanna mount FAT drives.
 
