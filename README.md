@@ -42,7 +42,7 @@ If you want to use the mount/unmount scripts add this to ```/etc/sudo.conf```:
 ```
 Path askpass /usr/lib/seahorse/ssh-askpass
 ```
-Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you wanna mount FAT drives.
+Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you want to mount FAT drives.
 
 # Audio:
 If you stowed audio edit ```/etc/pulse/default.pa``` and change:
