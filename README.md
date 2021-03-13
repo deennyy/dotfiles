@@ -35,7 +35,7 @@ touch "$HOME/.cache/zshhistory"
 chsh $USER
 ```
 
-# If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
+## If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
 ```
 Path askpass /usr/lib/ssh/gnome-ssh-askpass2
 ```
