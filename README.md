@@ -1,5 +1,7 @@
 # dotfiles
 
+A pretty much desktop environment made with openbox and other minimal(-ish) tools
+
 ![Screenshot: ](screenshot.png)
 
 Install the following packages with your favorite AUR helper:
@@ -7,7 +9,7 @@ Install the following packages with your favorite AUR helper:
 stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl neofetch
 numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme
 qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-fancy-git flameshot
-noto-fonts-emoji noto-fonts-cjk lxappearance-obconf zsh-syntax-highlighting
+noto-fonts-emoji noto-fonts-cjk lxappearance-obconf zsh-syntax-highlighting gnome-keyring seahorse
 ```
 
 Download the openbox theme and install it with ```lxappearance```: <br>
@@ -36,9 +38,9 @@ chsh $USER
 ```
 
 # Mount scripts:
-If you wanna use the mount/unmount scripts, install ```gnome-ssh-askpass2``` (AUR) and add this to ```/etc/sudo.conf```:
+If you want to use the mount/unmount scripts add this to ```/etc/sudo.conf```:
 ```
-Path askpass /usr/lib/ssh/gnome-ssh-askpass2
+Path askpass /usr/lib/seahorse/ssh-askpass
 ```
 Also install ```jmtpfs``` (AUR) if you wanna mount Android phones and ```dosfstools``` if you wanna mount FAT drives.
 
@@ -51,3 +53,6 @@ to
 ```
 load-module module-udev-detect tsched=0
 ```
+
+# Keyring setup:
+https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
