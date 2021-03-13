@@ -20,7 +20,7 @@ picom &
 tint2 &
 feh --bg-fill ~/.wallpaper.jpg --no-fehbg &
 nm-applet &
-polkit-dumb-agent &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 volctl &
 numlockx &
 redshift-gtk -l 42.698334:23.319941 &
