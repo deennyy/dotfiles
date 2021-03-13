@@ -39,4 +39,13 @@ Path askpass /usr/lib/openssh/ssh-askpass-fullscreen
 ```
 Also install ```jmtpfs``` (AUR) if you wanna mount Android phones and ```dosfstools``` if you wanna mount FAT drives.
 
+If you stowed audio edit ```/etc/pulse/default.pa``` and change:
+```
+load-module module-udev-detect
+```
+to
+```
+load-module module-udev-detect tsched=0
+```
+
 ![Screenshot: ](screenshot.png)
