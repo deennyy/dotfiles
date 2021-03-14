@@ -76,11 +76,11 @@ border_width = 0
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #505050 100
+background_color = #6363cc 100
 border_color = #333333 100
-background_color_hover = #5a5a5a 100
+background_color_hover = #6363cc 100
 border_color_hover = #000000 100
-background_color_pressed = #646464 100
+background_color_pressed = #6363cc 100
 border_color_pressed = #000000 100
 
 #-------------------------------------
