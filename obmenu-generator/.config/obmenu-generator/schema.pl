@@ -29,7 +29,7 @@ my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
     {exit => ['Exit', 'application-exit']},
-    {item => ['lockdunst', 'Lock', 'system-lock-screen']},
+    {item => ['~/.local/bin/lockdunst', 'Lock', 'system-lock-screen']},
     {item => ['reboot', 'Reboot', 'system-reboot']},
     {item => ['shutdown now', 'Shutdown', 'system-shutdown']},
 
@@ -37,7 +37,7 @@ our $SCHEMA = [
 
     #          COMMAND                 LABEL              ICON
     {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
-    {item => ['tabbed alacritty --embed',            'Terminal',     'utilities-terminal']},
+    {item => ['alacritty',            'Terminal',     'utilities-terminal']},
     {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
     {item => ['rofi -show run',            'Run command',  'system-run']},
 
