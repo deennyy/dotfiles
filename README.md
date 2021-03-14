@@ -53,6 +53,3 @@ to
 ```
 load-module module-udev-detect tsched=0
 ```
-
-# Keyring setup:
-https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
