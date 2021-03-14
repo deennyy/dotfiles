@@ -429,6 +429,7 @@
       </action>
     </keybind>
     <keybind key="W-l">
+      <action name="ToggleShowDesktop"/>
       <action name="Execute">
         <command>~/.local/bin/lockdunst</command>
       </action>
