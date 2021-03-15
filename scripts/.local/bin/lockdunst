@@ -1,8 +1,9 @@
 #!/bin/sh
 
 dunstctl set-paused true
+amixer set Master mute
 
-sleep 1
+sleep 2
 
 i3lock -B 10 -k --timecolor=eeeeee --datecolor=eeeeee --timepos="r+15:h-r-15" --insidecolor=00000000 --insidevercolor=00000000 --ringcolor=2d2d2d --keyhlcolor=6363cc --linecolor=00000000 --ringvercolor=6363cc --verifcolor=eeeeee --datestr="%a %d.%m" --insidewrongcolor=00000000 --wrongcolor=eeeeee --ringwrongcolor=ff1010
 
@@ -11,3 +12,4 @@ while killall -0 i3lock 2> /dev/null; do
 done
 
 dunstctl set-paused false
+amixer set Master unmute
