@@ -7,8 +7,8 @@ A pretty much desktop environment made with openbox and other minimal(-ish) tool
 Install the following packages with your favorite AUR helper:
 ```
 stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl neofetch
+qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-color flameshot neovim
 numlockx redshift xcape opensnap gtk2-perl alacritty pcmanfm ttf-roboto lxappearance papirus-icon-theme
-qt5-styleplugins vimix-gtk-themes file-roller p7zip unrar brave-bin xdotool i3lock-color flameshot
 noto-fonts-emoji noto-fonts-cjk lxappearance-obconf zsh-syntax-highlighting gnome-keyring seahorse
 ```
 
