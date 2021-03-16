@@ -53,5 +53,3 @@ to
 ```
 load-module module-udev-detect tsched=0
 ```
-You might also want to adjust the secrutiy limits: <br>
-https://blog.thepoon.fr/osuLinuxAudioLatency/ - refer to the "Adjusting latency" section
