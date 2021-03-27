@@ -25,6 +25,10 @@ QT_QPA_PLATFORMTHEME=gtk2
 
 Then remove ```README.md```, ```screenshot.png``` and any already existing files and run:
 ```
+stow -t ~ openbox tint2 dunst ...
+```
+Or if you just want to use all my dotfiles just run:
+```
 stow -t ~ *
 ```
 
@@ -45,7 +49,7 @@ Path askpass /usr/lib/seahorse/ssh-askpass
 Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you want to mount FAT drives.
 
 # Audio:
-If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and edit ```/etc/pulse/default.pa``` and change:
+If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and edit ```/etc/pulse/default.pa```:
 ```
 load-module module-udev-detect
 ```
