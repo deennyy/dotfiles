@@ -34,6 +34,8 @@ stow -t ~ *
 
 And set the GTK themes in ```lxappearance```. **(set hinting style to slight and antialiasing to on if you stowed fonts)**
 
+Also change "alacritty" in rc.xml and config.pl if you want to use another terminal emulator.
+
 # zsh setup:
 Install ```zsh``` and ```zsh-syntax-highlighting``` and then:
 ```
