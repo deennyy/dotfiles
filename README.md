@@ -6,9 +6,9 @@ A pretty much desktop environment made with openbox and other minimal(-ish) tool
 
 Install the following packages with your favorite AUR helper:
 ```
-stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl neofetch
-vimix-gtk-themes xdotool i3lock-color flameshot neovim numlockx redshift alacritty ttf-roboto lxappearance
-xcape opensnap gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme
+stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl 
+vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap
+xcape gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme
 ```
 
 Download the openbox theme and install it with ```lxappearance```: <br>
