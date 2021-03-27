@@ -17,8 +17,7 @@ https://www.gnome-look.org/p/1017696/
 Download the cursor theme and extract it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
-If you use QT apps and want them to match the GTK theme install ```qt5-styleplugins``` and <br>
-add this to ```/etc/environment```:
+If you use QT apps and want them to match the GTK theme install ```qt5-styleplugins``` and add this to ```/etc/environment```:
 ```
 XDG_CURRENT_DESKTOP=Unity 
 QT_QPA_PLATFORMTHEME=gtk2
@@ -46,8 +45,7 @@ Path askpass /usr/lib/seahorse/ssh-askpass
 Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you want to mount FAT drives.
 
 # Audio:
-If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and <br>
-edit ```/etc/pulse/default.pa``` and change:
+If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and edit ```/etc/pulse/default.pa``` and change:
 ```
 load-module module-udev-detect
 ```
