@@ -42,7 +42,7 @@ chsh $USER
 ```
 
 # Mount scripts:
-If you want to use the mount/unmount scripts install ```seahorse``` add this to ```/etc/sudo.conf```:
+If you want to use the rofimount/rofiunmount scripts install ```seahorse``` add this to ```/etc/sudo.conf```:
 ```
 Path askpass /usr/lib/seahorse/ssh-askpass
 ```
