@@ -17,7 +17,7 @@ https://www.gnome-look.org/p/1017696/
 Download the cursor theme and extract it in ```~/.icons```: <br>
 https://www.gnome-look.org/p/999927/
 
-If you use QT apps and want them to match the GTK theme install ```qt5-styleplugins``` and add this to ```/etc/environment```:
+If you use QT apps and want them to match the GTK theme install ```qt5-styleplugins``` and edit ```/etc/environment```:
 ```
 XDG_CURRENT_DESKTOP=Unity 
 QT_QPA_PLATFORMTHEME=gtk2
