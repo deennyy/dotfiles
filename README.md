@@ -34,7 +34,7 @@ stow -t ~ *
 
 And set the GTK themes in ```lxappearance```. **(set hinting style to slight and antialiasing to on if you stowed fonts)**
 
-Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal emulator.
+Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal.
 
 # zsh setup:
 Install ```zsh``` and ```zsh-syntax-highlighting``` and then run:
