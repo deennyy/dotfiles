@@ -4,7 +4,7 @@ A pretty much desktop environment made with openbox and other minimal(-ish) tool
 
 ![Screenshot: ](screenshot.png)
 
-Install the following packages with your favorite AUR helper:
+Install the following packages with your favorite AUR helper to get the basic desktop setup:
 ```
 stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl 
 vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap
