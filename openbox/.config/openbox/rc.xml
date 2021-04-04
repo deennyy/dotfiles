@@ -416,6 +416,10 @@
     <keybind key="C-A-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
+        <position>
+          <x>5</x>
+          <y>650</y>
+        </position>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
