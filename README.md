@@ -6,9 +6,9 @@ A pretty much desktop environment made with openbox and other minimal(-ish) tool
 
 Install the following packages with your favorite AUR helper to get the basic desktop setup:
 ```
-stow dunst obmenu-generator openbox picom rofi tint2 feh network-manager-applet polkit-gnome volctl 
+stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl 
 vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap
-xcape gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme
+gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme
 ```
 
 Download the openbox theme and install it with ```lxappearance```: <br>
@@ -35,6 +35,8 @@ stow -t ~ *
 And set the GTK themes in ```lxappearance```. **(set hinting style to slight and antialiasing to on if you stowed fonts)**
 
 Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal.
+You can also change "rofi" in the above mentioned files if you use dmenu or any other run launcher.
+Some things in openbox/rc.xml are hardcoded for 1080p, but you can easily adapt them for your resolution.
 
 # zsh setup:
 Install ```zsh``` and ```zsh-syntax-highlighting``` and then run:
