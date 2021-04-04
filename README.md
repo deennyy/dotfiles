@@ -34,8 +34,8 @@ stow -t ~ *
 
 And set the GTK themes in ```lxappearance```. **(set hinting style to slight and antialiasing to on if you stowed fonts)**
 
-Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal.
-You can also change "rofi" in the above mentioned files if you use dmenu or any other run launcher.
+Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal. <br>
+You can also change "rofi" in the above mentioned files if you use dmenu or any other run launcher. <br>
 Some things in openbox/rc.xml are hardcoded for 1080p, but you can easily adapt them for your resolution.
 
 # zsh setup:
