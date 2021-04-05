@@ -51,6 +51,7 @@ If you want to use the rofimount/rofiunmount scripts install ```rofi``` and ```s
 Path askpass /usr/lib/seahorse/ssh-askpass
 ```
 Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you want to mount FAT drives.
+Full credit to [Luke Smith](https://github.com/LukeSmithxyz) for the scripts, I just adopted them to use rofi and other small changes.
 
 # Audio:
 If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and edit ```/etc/pulse/default.pa```:
