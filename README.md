@@ -35,7 +35,9 @@ stow -t ~ *
 And set the GTK themes in ```lxappearance```. **(set hinting style to slight and antialiasing to on if you stowed fonts)**
 
 Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you want to use another terminal. <br>
+
 You can also change "rofi" in the above mentioned files if you use dmenu or any other run launcher. <br>
+
 Some things in openbox/rc.xml are hardcoded for 1080p, but you can easily adapt them for your resolution.
 
 # zsh setup:
@@ -51,6 +53,7 @@ If you want to use the rofimount/rofiunmount scripts install ```rofi``` and ```s
 Path askpass /usr/lib/seahorse/ssh-askpass
 ```
 Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfstools``` if you want to mount FAT drives. <br>
+
 Full credit to [Luke Smith](https://github.com/LukeSmithxyz) for the scripts, I just adopted them to use rofi and other small changes.
 
 # Audio:
