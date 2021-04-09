@@ -23,11 +23,11 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-Then remove ```README.md```, ```screenshot.png``` and any already existing files and inside the dotfiles directory run:
+Then remove ```README.md```, ```screenshot.png```, any already existing files and inside the dotfiles directory run:
 ```
 stow -t ~ openbox tint2 dunst ...
 ```
-Or if you just want to use all my dotfiles just run:
+Or if you just want to use all my dotfiles run:
 ```
 stow -t ~ *
 ```
