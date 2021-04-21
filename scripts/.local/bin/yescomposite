@@ -2,3 +2,4 @@
 
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
 picom &
+dunstctl set-paused false
