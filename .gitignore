@@ -2,3 +2,5 @@ tint2/.config/tint2/tint2rc.backup*
 obmenu-generator/.config/obmenu-generator/cache.db
 obmenu-generator/.config/obmenu-generator/icons
 nvim/.config/nvim/.netrwhist
+audio/.config/pulse/*
+!audio/.config/pulse/daemon.conf
