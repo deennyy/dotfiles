@@ -11,6 +11,8 @@ vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxa
 gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab
 ```
 
+You will probably also want to install a terminal emulator, web browser, file explorer and a run launcher.
+
 Download the openbox theme and install it with ```lxappearance```: <br>
 https://www.gnome-look.org/p/1017696/
 
@@ -39,6 +41,8 @@ Also change "alacritty" in openbox/rc.xml and obmenu-generator/config.pl if you 
 You can also change "rofi" in the above mentioned files if you use dmenu or any other run launcher. <br>
 
 Some things in openbox/rc.xml are hardcoded for 1080p, but you can easily adapt them for your resolution.
+
+You might also want to check out my other repo [other-configs](https://github.com/deennyy/other-configs/).
 
 # zsh setup:
 Install ```zsh``` and ```zsh-syntax-highlighting``` and then run:
