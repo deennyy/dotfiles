@@ -57,11 +57,4 @@ Also install ```jmtpfs``` (AUR) if you want to mount Android phones and ```dosfs
 Full credit to [Luke Smith](https://github.com/LukeSmithxyz) for the scripts, I just adopted them to use rofi and other small changes.
 
 # Audio:
-If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed and edit ```/etc/pulse/default.pa```:
-```
-load-module module-udev-detect
-```
-to
-```
-load-module module-udev-detect tsched=0
-```
+If you stowed audio make sure you have ```pulseaudio``` and ```pulseaudio-alsa``` installed. 
