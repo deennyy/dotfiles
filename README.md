@@ -8,7 +8,7 @@ Install the following packages with your favorite AUR helper to get the basic de
 ```
 stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl 
 vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap
-gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme
+gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab
 ```
 
 Download the openbox theme and install it with ```lxappearance```: <br>
