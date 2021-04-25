@@ -280,7 +280,9 @@
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>
-      <action name="MoveToEdge"><direction>west</direction></action>
+      <action name="MoveToEdge">
+        <direction>west</direction>
+      </action>
     </keybind>
     <keybind key="W-Right">
       <action name="If">
@@ -297,7 +299,9 @@
       <action name="MoveResizeTo">
         <width>50%</width>
       </action>
-      <action name="MoveToEdge"><direction>east</direction></action>
+      <action name="MoveToEdge">
+        <direction>east</direction>
+      </action>
     </keybind>
     <keybind key="W-Down">
       <action name="If">
@@ -314,7 +318,9 @@
       <action name="MoveResizeTo">
         <height>50%</height>
       </action>
-      <action name="MoveToEdge"><direction>south</direction></action>
+      <action name="MoveToEdge">
+        <direction>south</direction>
+      </action>
     </keybind>
     <keybind key="W-Up">
       <action name="If">
@@ -326,12 +332,14 @@
         </then>
       </action>
       <action name="Unmaximize">
-          <direction>vertical</direction>
+        <direction>vertical</direction>
       </action>
       <action name="MoveResizeTo">
-          <height>50%</height>
+        <height>50%</height>
       </action>
-      <action name="MoveToEdge"><direction>north</direction></action>
+      <action name="MoveToEdge">
+        <direction>north</direction>
+      </action>
     </keybind>
     <keybind key="W-space">
       <action name="ToggleAlwaysOnTop"/>
@@ -536,18 +544,18 @@
         <action name="if">
           <maximized>yes</maximized>
           <then>
-              <action name="Unmaximize"/>
-              <action name="MoveResizeTo">
-                <x>center</x>
-                <y>0</y>
-              </action>
+            <action name="Unmaximize"/>
+            <action name="MoveResizeTo">
+              <x>center</x>
+              <y>0</y>
+            </action>
           </then>
         </action>
         <action name="if">
           <maximizedvertical>yes</maximizedvertical>
           <then>
             <action name="Unmaximize"/>
-              <direction>vertical</direction>
+            <direction>vertical</direction>
             <action name="MoveResizeTo">
               <x>center</x>
               <y>current</y>
