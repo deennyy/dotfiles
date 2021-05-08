@@ -425,8 +425,8 @@
       <action name="ShowMenu">
         <menu>root-menu</menu>
         <position>
-          <x>5</x>
-          <y>650</y>
+          <x>1</x>
+          <y>655</y>
         </position>
       </action>
     </keybind>
