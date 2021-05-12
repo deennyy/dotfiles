@@ -1,3 +1,43 @@
-configuration {
-	theme: "/usr/share/rofi/themes/android_notification.rasi";
+//configuration {
+//	theme: "/usr/share/rofi/themes/android_notification.rasi";
+//}
+
+* {
+    text-color:			#eeeeee;
+    background-color:		#2d2d2d;
+    bordercolor:		#6363cc;
+    selected-normal-background: @bordercolor;
+    selected-normal-foreground: @text-color;
+}
+#window {
+    background-color: 		@background-color;
+    text-color:	      		@text-color;
+    padding:	      		6;
+    border:	      		3;
+    border-color:     		@bordercolor;
+}
+#element.selected.normal {
+    background-color: 		@selected-normal-background;
+    text-color:       		@selected-normal-foreground;
+}
+#case-indicator {
+    spacing:    		0;
+    text-color: 		@text-color;
+}
+#entry {
+    spacing:   			0;
+    text-color: 		@text-color;
+}
+#prompt {
+    spacing:    		0;
+    text-color: 		@text-color;
+}
+#inputbar {
+    children:   		[ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     		false;
+    str:        		":";
+    margin:     		0px 0.3em 0em 0em ;
+    text-color: 		@text-color;
 }

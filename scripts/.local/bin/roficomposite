@@ -1,0 +1,9 @@
+#!/bin/sh
+
+action="$(printf "On\\nOff" | rofi -i -p "Compositing" -dmenu)"
+
+if [ "$action" = "On" ]; then
+    ~/.local/bin/yescomposite
+elif [ "$action" = "Off" ]; then
+    ~/.local/bin/nocomposite
+fi

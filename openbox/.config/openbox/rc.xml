@@ -471,6 +471,11 @@
         <command>flameshot full -c</command>
       </action>
     </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>~/.local/bin/roficomposite</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
