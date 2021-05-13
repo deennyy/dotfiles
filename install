@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -x
+
+yay -S --needed stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearanc opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts
+
+wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
+
+tar xzf Afterpiece.tar.gz
+
+mkdir ~/.themes
+
+mv Afterpiece ~/.themes
+
+wget https://cdn.discordapp.com/attachments/835125164572016661/842410320160882728/165371-Breeze.tar.gz
+
+tar xzf 165371-Breeze.tar.gz
+
+mkdir ~/.icons
+
+mv Breeze ~/.icons
+
+touch "$HOME/.cache/zshhistory"
+
+chsh $USER
+
+sudo sed -i "31i Path askpass /usr/lib/seahorse/ssh-askpass" /etc/sudo.conf
+
+git clone https://github.com/deennyy/other-configs
+
+sudo cp -f other-configs/usr/share/applications/* /usr/share/applications
+
+mkdir -p ~/.config/pulse
+
+cp other-configs/home/user/.config/pulse/daemon.conf ~/.config/pulse
+
+sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
+
+sudo mkdir -p /etc/X11/xorg.conf.d
+
+sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
+
+sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
