@@ -1,20 +1,18 @@
 #!/bin/sh
 
-set -x
-
 echo "have you run stow yet? (y/n) "
 
 read decision
 
 if [ "$decision" = "y" ]; then
-    sleep 1
+    echo "make sure you have yay installed, sleeping 5 seconds" && sleep 5
 elif [ "$decision" = "n" ]; then
     echo "please stow first then run this script" && exit
 else
-    echo "only accepted answers are y/n" && exit
+    echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearanc opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim qt5ct kvantum-qt5
+yay -S --needed wget stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim qt5ct kvantum-qt5
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -60,8 +58,6 @@ cp -r vimix-kde/Kvantum/Vimix-Dark-Doder ~/.config/Kvantum
 
 sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
 
-xrdb -merge ~/.Xresources
-
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
@@ -85,8 +81,12 @@ if [ "$decision2" = "y" ]; then
 elif [ "$decision2" = "n" ]; then
     exit
 else
-    echo "only accepted answers are y/n" && exit
+    echo "accepted answers are y/n" && exit
 fi
+
+sudo cp -f other-configs/etc/pacman.conf /etc
+
+sudo pacman -Syu
 
 sudo pacman -S nvidia-lts nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 
@@ -109,5 +109,3 @@ sudo cp other-configs/etc/gamemode.ini /etc
 sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 
 sudo mkinitcpio -P
-
-sudo cp -f other-configs/etc/pacman.conf /etc
