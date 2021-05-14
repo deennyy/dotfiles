@@ -54,7 +54,9 @@ sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xo
 
 git clone https://github.com/vinceliuice/vimix-kde
 
-cp -r vimix-kde/Kvantum/Vimix-Dark-Doder ~/.config/Kvantum
+mkdir -p ~/.config/Kvantum/Vimix-Dark-Doder
+
+cp vimix-kde/Kvantum/Vimix-Dark-Doder/* ~/.config/Kvantum/Vimix-Dark-Doder
 
 sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
 
