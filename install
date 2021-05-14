@@ -14,7 +14,7 @@ else
     echo "only accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearanc opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie
+yay -S --needed wget stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearanc opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -56,7 +56,7 @@ sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xo
 
 git clone https://github.com/vinceliuice/vimix-kde
 
-cp vimix-kde/Kvantum/Vimix-Dark-Doder ~/.config/Kvantum
+cp -r vimix-kde/Kvantum/Vimix-Dark-Doder ~/.config/Kvantum
 
 sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
 
@@ -88,11 +88,13 @@ else
     echo "only accepted answers are y/n" && exit
 fi
 
+sudo pacman -S nvidia-lts nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+
 sudo nvidia-xconfig --metamodes="nvidia-auto-select +0+0 {ForceCompositionPipeline=On}" --custom-edid="HDMI-0:/home/denny/.edid_yeet.bin"
 
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.d/20-nvidia.conf
 
-sudo sed -i '/NVIDIA Corporation/a\ \ \ \ Option         "Coolbits" "28"' /etc/X11/20-nvidia.conf
+sudo sed -i '/NVIDIA Corporation/a\ \ \ \ Option         "Coolbits" "28"' /etc/X11/xorg.conf.d/20-nvidia.conf
 
 sudo cp -f other-configs/etc/default/grub /etc/default
 
