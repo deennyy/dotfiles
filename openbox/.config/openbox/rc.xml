@@ -422,12 +422,26 @@
       </action>
     </keybind>
     <keybind key="C-A-space">
-      <action name="ShowMenu">
-        <menu>root-menu</menu>
-        <position>
-          <x>1</x>
-          <y>655</y>
-        </position>
+      <action name="If">
+        <monitor>1</monitor>
+	<then>
+	  <action name="ShowMenu">
+	    <menu>root-menu</menu>
+	    <position>
+	      <x>1</x>
+	      <y>655</y>
+	    </position>
+	  </action>
+        </then>
+	<else>
+	  <action name="ShowMenu">
+            <menu>root-menu</menu>
+            <position>
+              <x>1921</x>
+              <y>475</y>
+	    </position>
+	  </action>
+	</else>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
