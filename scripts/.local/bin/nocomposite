@@ -2,5 +2,5 @@
 
 killall picom
 killall conky
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = Off }"
+nvidia-settings --assign CurrentMetaMode="HDMI-0: 1920x1080_75 +0+0 {ForceCompositionPipeline=Off}, DVI-D-0: 1440x900_75 +1920+0 {ForceCompositionPipeline=Off}"
 dunstctl set-paused true
