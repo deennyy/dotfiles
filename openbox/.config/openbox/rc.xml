@@ -401,7 +401,7 @@
       <action name="DirectionalTargetWindow">
         <direction>right</direction>
       </action>
-    </keybind>Begin interactively movin
+    </keybind>
     <keybind key="W-S-Left">
       <action name="DirectionalTargetWindow">
         <direction>left</direction>
@@ -437,7 +437,7 @@
       <action name="Execute">
         <command>alacritty</command>
       </action>
-    </keybind>Begin interactively movin
+    </keybind>
     <keybind key="S-W-s">
       <action name="Execute">
         <command>flameshot gui</command>
@@ -452,7 +452,7 @@
 	    <position>
 	      <x>1</x>
 	      <y>655</y>
-	    </position>Begin interactively movin
+	    </position>
 	  </action>
         </then>
 	<else>
@@ -467,7 +467,7 @@
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">Begin interactively movin
+      <action name="Execute">
         <command>amixer set Master 2%+</command>
       </action>
     </keybind>
@@ -506,7 +506,7 @@
       <action name="Execute">
         <command>flameshot full -c</command>
       </action>
-    </keybind>Begin interactively movin
+    </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>~/.local/bin/roficomposite</command>
@@ -533,7 +533,7 @@
       <mousebind button="A-Left" action="Click">
         <action name="Unshade"/>
       </mousebind>
- Begin interactively movin     <mousebind button="A-Left" action="Drag">
+      <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
       <mousebind button="A-Right" action="Press">
