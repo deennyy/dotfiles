@@ -408,7 +408,7 @@
     </keybind>
     <keybind key="W-b">
       <action name="Execute">
-        <command>xdg-open https://</command>
+	<command>~/.local/bin/brave</command>
       </action>
     </keybind>
     <keybind key="C-A-t">

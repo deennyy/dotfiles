@@ -1,0 +1,11 @@
+#!/bin/sh
+
+xdg-open https:// &
+
+sleep 0.4
+
+brave_id="$(xdotool search --class Brave-browser | tail -n 1)"
+
+mouse_pos="$(xdotool getmouselocation | sed -E "s/ screen:0 window:[^ ]*|x:|y://g" | rev | cut -c5- | rev)"
+
+[ $mouse_pos -gt 1920 ] && xdotool windowmove $brave_id 1921 0 && xdotool windowsize $brave_id 1440 900
