@@ -86,14 +86,14 @@ sudo cp -f other-configs/etc/default/grub /etc/default
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-sudo cp other-configs/etc/gamemode.ini /etc
-
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
 read decision2
 
 if [ "$decision2" = "y" ]; then
-    echo "X11 likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems, sleeping 5 seconds" && sleep 5
+    echo "X11 likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems"
+    echo "also the gamemode config has a GPU OC applied, which might crash on your GPU, be sure to disable it"
+    echo "sleeping 5 seconds..." && sleep 5
 elif [ "$decision2" = "n" ]; then
     exit
 else
@@ -107,6 +107,8 @@ sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
 sudo mkdir -p /etc/pacman.d/hooks
 
 sudo cp other-configs/etc/pacman.d/hooks/nvidia.hook /etc/pacman.d/hooks
+
+sudo cp other-configs/etc/gamemode.ini /etc
 
 sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 

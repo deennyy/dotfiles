@@ -26,5 +26,9 @@ set -o vi
 
 colorscript random
 
+precmd() { eval "$PROMPT_COMMAND" }
+
+PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOST}" "${PWD/#$HOME/~}"'
+
 # Load ; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
