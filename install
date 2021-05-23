@@ -12,7 +12,7 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom xcape tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim qt5ct kvantum-qt5 pavucontrol
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim qt5ct kvantum-qt5 pavucontrol unclutter
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 

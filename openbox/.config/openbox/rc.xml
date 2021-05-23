@@ -344,18 +344,6 @@
     <keybind key="W-space">
       <action name="ToggleAlwaysOnTop"/>
     </keybind>
-    <keybind key="C-Right">
-      <action name="MoveResizeTo">
-        <x>0</x>
-	<monitor>1</monitor>
-      </action>
-    </keybind>
-    <keybind key="C-Left">
-      <action name="MoveResizeTo">
-        <x>0</x>
-	<monitor>2</monitor>
-      </action>
-    </keybind>
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
@@ -384,16 +372,6 @@
           <action name="Raise"/>
           <action name="Unshade"/>
         </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-1">
-      <action name="Execute">
-        <command>xdotool mousemove 960 540</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-2">
-      <action name="Execute">
-        <command>xdotool mousemove 2640 630</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
@@ -444,26 +422,8 @@
       </action>
     </keybind>
     <keybind key="C-A-space">
-      <action name="If">
-        <monitor>1</monitor>
-	<then>
-	  <action name="ShowMenu">
-	    <menu>root-menu</menu>
-	    <position>
-	      <x>1</x>
-	      <y>655</y>
-	    </position>
-	  </action>
-        </then>
-	<else>
-	  <action name="ShowMenu">
-            <menu>root-menu</menu>
-            <position>
-              <x>1921</x>
-              <y>655</y>
-	    </position>
-	  </action>
-	</else>
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
