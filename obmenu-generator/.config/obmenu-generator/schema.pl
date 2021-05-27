@@ -38,7 +38,7 @@ our $SCHEMA = [
     #          COMMAND                 LABEL              ICON
     {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
     {item => ['alacritty',            'Terminal',     'utilities-terminal']},
-    {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
+    {item => ['~/.local/bin/brave', 'Web Browser',  'web-browser']},
     {item => ['rofi -show run',            'Run command',  'system-run']},
 
     {sep => 'Categories'},

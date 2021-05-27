@@ -437,7 +437,6 @@
       </action>
     </keybind>
     <keybind key="W-l">
-      <action name="ToggleShowDesktop"/>
       <action name="Execute">
         <command>~/.local/bin/lockdunst</command>
       </action>
@@ -470,6 +469,11 @@
     <keybind key="W-c">
       <action name="Execute">
         <command>~/.local/bin/roficomposite</command>
+      </action>
+    </keybind>
+    <keybind key="C-S-Escape">
+      <action name="Execute">
+	<command>alacritty -e htop</command>	
       </action>
     </keybind>
   </keyboard>
