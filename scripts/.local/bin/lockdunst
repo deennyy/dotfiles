@@ -5,7 +5,7 @@ amixer set Master mute
 
 sleep 2
 
-i3lock -S 1 -B 10 -k --timecolor=eeeeee --datecolor=eeeeee --timepos="r+15:h-r-15" --insidecolor=00000000 --insidevercolor=00000000 --ringcolor=2d2d2d --keyhlcolor=6363cc --linecolor=00000000 --ringvercolor=6363cc --verifcolor=eeeeee --datestr="%a %d.%m" --insidewrongcolor=00000000 --wrongcolor=eeeeee --ringwrongcolor=ff1010
+i3lock -S 1 -B 10 -k --time-color=eeeeee --date-color=eeeeee --time-pos="x+95:y+h-95" --inside-color=00000000 --insidever-color=00000000 --ring-color=2d2d2d --keyhl-color=6363cc --line-color=00000000 --ringver-color=6363cc --verif-color=eeeeee --date-str="%a %d.%m" --insidewrong-color=00000000 --wrong-color=eeeeee --ringwrong-color=ff1010
 
 while killall -0 i3lock 2> /dev/null; do
     sleep 1
