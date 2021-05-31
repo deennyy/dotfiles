@@ -64,7 +64,7 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/con
 
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 
-sudo sh -c "echo 'export FREETYPE_PROPERTIES=\"truetype:interpreter-version=38\"' >> /etc/profile.d/freetype2.sh"
+#sudo sh -c "echo 'export FREETYPE_PROPERTIES=\"truetype:interpreter-version=38\"' >> /etc/profile.d/freetype2.sh"
 
 sudo fc-cache -fv
 
