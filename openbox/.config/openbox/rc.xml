@@ -473,7 +473,7 @@
     </keybind>
     <keybind key="C-S-Escape">
       <action name="Execute">
-	<command>alacritty -e htop</command>	
+        <command>alacritty -e htop</command>
       </action>
     </keybind>
   </keyboard>
@@ -935,8 +935,8 @@
 -->
     <application role="browser-window">
       <position force="yes">
-	<x>1921</x>
-	<y>281</y>
+        <x>1921</x>
+        <y>281</y>
       </position>
       <maximized>true</maximized>
     </application>
