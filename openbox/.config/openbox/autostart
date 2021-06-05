@@ -19,7 +19,7 @@
 picom &
 tint2 &
 feh --bg-fill --no-fehbg ~/.wallpaper.jpg &
-nm-applet &
+#nm-applet &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 volctl &
 numlockx &
