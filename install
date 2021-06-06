@@ -12,13 +12,15 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh network-manager-applet polkit-gnome alsa-utils xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pipewire pipewire-pulse pipewire-alsa pipewire-jack
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome alsa-utils xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pipewire pipewire-pulse pipewire-alsa pipewire-jack
 
 #sudo pacman -S --needed qt5ct kvantum-qt5
 
 #sudo pacman -S --needed vimix-gtk-themes
 
 #sudo pacman -S pulseaudio pulseaudio-alsa volctl pavucontrol
+
+#sudo pacman -S network-manager-applet 
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
