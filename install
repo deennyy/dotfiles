@@ -12,7 +12,13 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh network-manager-applet polkit-gnome volctl alsa-utils vimix-gtk-themes xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting pulseaudio pulseaudio-alsa jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg neovim qt5ct kvantum-qt5 pavucontrol unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh network-manager-applet polkit-gnome alsa-utils xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance opensnap galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pipewire pipewire-pulse pipewire-alsa pipewire-jack
+
+#sudo pacman -S --needed qt5ct kvantum-qt5
+
+#sudo pacman -S --needed vimix-gtk-themes
+
+#sudo pacman -S pulseaudio pulseaudio-alsa volctl pavucontrol
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -22,13 +28,13 @@ mkdir ~/.themes
 
 mv Afterpiece ~/.themes
 
-wget https://cdn.discordapp.com/attachments/835125164572016661/842410320160882728/165371-Breeze.tar.gz
+#wget https://cdn.discordapp.com/attachments/835125164572016661/842410320160882728/165371-Breeze.tar.gz
 
-tar xzf 165371-Breeze.tar.gz
+#tar xzf 165371-Breeze.tar.gz
 
-mkdir ~/.icons
+#mkdir ~/.icons
 
-mv Breeze ~/.icons
+#mv Breeze ~/.icons
 
 touch "$HOME/.cache/zshhistory"
 
@@ -40,9 +46,9 @@ git clone https://github.com/deennyy/other-configs
 
 sudo cp -f other-configs/usr/share/applications/* /usr/share/applications
 
-mkdir -p ~/.config/pulse
+#mkdir -p ~/.config/pulse
 
-cp other-configs/home/user/.config/pulse/daemon.conf ~/.config/pulse
+#cp other-configs/home/user/.config/pulse/daemon.conf ~/.config/pulse
 
 sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
 
@@ -52,13 +58,13 @@ sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
 
 sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 
-git clone https://github.com/vinceliuice/vimix-kde
+#git clone https://github.com/vinceliuice/vimix-kde
 
-mkdir -p ~/.config/Kvantum/Vimix-Dark-Doder
+#mkdir -p ~/.config/Kvantum/Vimix-Dark-Doder
 
-cp vimix-kde/Kvantum/Vimix-Dark-Doder/* ~/.config/Kvantum/Vimix-Dark-Doder
+#cp vimix-kde/Kvantum/Vimix-Dark-Doder/* ~/.config/Kvantum/Vimix-Dark-Doder
 
-sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
+#sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
 
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
@@ -119,6 +125,8 @@ sudo cp -f other-configs/etc/makepkg.conf /etc
 sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 
 sudo mkinitcpio -P
+
+sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
 
 echo "enable autologin? (username is set to denny)"
 
