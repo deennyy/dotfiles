@@ -430,16 +430,10 @@
       <action name="Execute">
         <command>pactl set-sink-volume @DEFAULT_SINK@ +2%</command>
       </action>
-      <action name="Execute">
-        <command>~/.local/bin/volctlsh</command>	
-      </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
         <command>pactl set-sink-volume @DEFAULT_SINK@ -2%</command>
-      </action>
-      <action name="Execute">
-        <command>~/.local/bin/volctlsh</command>	
       </action>
     </keybind>
     <keybind key="W-l">

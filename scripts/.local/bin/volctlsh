@@ -1,5 +1,0 @@
-#!/bin/sh
-
-VOL_LVL="$(amixer -M -D sysdefault | sed -n '6p' | awk '{print $5}')"
-
-notify-send Current\ Volume "$VOL_LVL"

@@ -12,15 +12,13 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome alsa-utils xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pipewire pipewire-pulse pipewire-alsa pipewire-jack
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server xorg-xinit neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa volctl pavucontrol ttf-liberation
 
 #sudo pacman -S --needed qt5ct kvantum-qt5
 
 #sudo pacman -S --needed vimix-gtk-themes
 
-#sudo pacman -S pulseaudio pulseaudio-alsa volctl pavucontrol
-
-#sudo pacman -S network-manager-applet 
+#sudo pacman -S --needed network-manager-applet 
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -88,7 +86,7 @@ sudo systemctl enable --now sshd
 
 sudo cp -f other-configs/etc/pacman.conf /etc
 
-sudo pacman -Syu
+#sudo pacman -Syu
 
 #sudo cp -f other-configs/etc/default/grub /etc/default
 
@@ -124,11 +122,11 @@ sudo cp other-configs/etc/gamemode.ini /etc
 
 sudo cp -f other-configs/etc/makepkg.conf /etc
 
+sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
+
 sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 
 sudo mkinitcpio -P
-
-sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
 
 echo "enable autologin? (username is set to denny)"
 
@@ -136,7 +134,7 @@ read decision3
 
 if [ "$decision3" = "y" ]; then
     sleep 1
-elif [ "$decision3" = "n"]; then
+elif [ "$decision3" = "n" ]; then
     exit
 else
     echo "accepted answers are y/n" && exit
