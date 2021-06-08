@@ -1,6 +1,5 @@
 #!/bin/sh
 
-killall redshift-gtk
 killall redshift
 sleep 1
-redshift-gtk -l 42.698334:23.319941 &
+redshift -l 42.698334:23.319941 &

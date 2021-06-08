@@ -1,5 +1,5 @@
 :imap ii <Esc>
-:set number
+:set number relativenumber
 :set ignorecase
 :set smartcase
 :set shiftwidth=4

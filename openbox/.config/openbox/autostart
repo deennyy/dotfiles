@@ -18,14 +18,12 @@
 
 picom &
 tint2 &
-feh --bg-fill --no-fehbg ~/.wallpaper.jpg &
-#nm-applet &
+feh --bg-scale --no-fehbg ~/.wallpaper.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-volctl &
 numlockx &
 redshift -l 42.698334:23.319941 &
 dunst &
 setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:alt_shift_toggle &
 conky &
 unclutter &
-#python ~/.local/bin/bruh.py &
+~/.local/bin/volctlsh &

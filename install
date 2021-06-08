@@ -12,13 +12,7 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server xorg-xinit neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa volctl pavucontrol ttf-liberation
-
-#sudo pacman -S --needed qt5ct kvantum-qt5
-
-#sudo pacman -S --needed vimix-gtk-themes
-
-#sudo pacman -S --needed network-manager-applet 
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server xorg-xinit xorg-xinput neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -27,14 +21,6 @@ tar xzf Afterpiece.tar.gz
 mkdir ~/.themes
 
 mv Afterpiece ~/.themes
-
-#wget https://cdn.discordapp.com/attachments/835125164572016661/842410320160882728/165371-Breeze.tar.gz
-
-#tar xzf 165371-Breeze.tar.gz
-
-#mkdir ~/.icons
-
-#mv Breeze ~/.icons
 
 touch "$HOME/.cache/zshhistory"
 
@@ -46,10 +32,6 @@ git clone https://github.com/deennyy/other-configs
 
 sudo cp -f other-configs/usr/share/applications/* /usr/share/applications
 
-#mkdir -p ~/.config/pulse
-
-#cp other-configs/home/user/.config/pulse/daemon.conf ~/.config/pulse
-
 sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
 
 sudo mkdir -p /etc/X11/xorg.conf.d
@@ -58,19 +40,9 @@ sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
 
 sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 
-#git clone https://github.com/vinceliuice/vimix-kde
-
-#mkdir -p ~/.config/Kvantum/Vimix-Dark-Doder
-
-#cp vimix-kde/Kvantum/Vimix-Dark-Doder/* ~/.config/Kvantum/Vimix-Dark-Doder
-
-#sudo sh -c "echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment"
-
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-
-#sudo sh -c "echo 'export FREETYPE_PROPERTIES=\"truetype:interpreter-version=38\"' >> /etc/profile.d/freetype2.sh"
 
 sudo fc-cache -fv
 
@@ -85,12 +57,6 @@ sudo systemctl enable --now systemd-timesyncd
 sudo systemctl enable --now sshd
 
 sudo cp -f other-configs/etc/pacman.conf /etc
-
-#sudo pacman -Syu
-
-#sudo cp -f other-configs/etc/default/grub /etc/default
-
-#sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo sh -c "echo 'vm.swappiness=10' >> /etc/sysctl.d/99-swappiness.conf"
 

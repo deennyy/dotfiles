@@ -1,0 +1,20 @@
+#!/bin/sh
+
+volume_level=0
+notif_id=0
+initial=true
+
+notify_func() { \
+    if [ "$initial" = true ]; then
+	notif_id=$(dunstify -p "$volume_level")
+	initial=false
+    fi
+    
+    dunstify -r "$notif_id" "$volume_level"
+}
+
+xinput test-xi2 --root "Kingston HyperX Cloud Stinger Wireless Consumer Control" | grep -E --line-buffered "(detail: 122|detail: 123)" | while read line; do
+    volume_level=$(pactl list sinks | grep "Volume: f" | awk '{print $5}')
+    notify_func
+    sleep 0.001
+done
