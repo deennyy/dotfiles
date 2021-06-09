@@ -14,7 +14,7 @@ notify_func() { \
 }
 
 xinput test-xi2 --root "Kingston HyperX Cloud Stinger Wireless Consumer Control" | grep -E --line-buffered "(detail: 122|detail: 123)" | while read line; do
-    volume_level=$(pactl list sinks | grep "Volume: f" | awk '{print $5}')
+    volume_level=$(pactl list sinks | grep "Volume: f" | awk '{print $5}' | head -n1)
     notify_func
     sleep 0.001
 done
