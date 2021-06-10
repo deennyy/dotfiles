@@ -12,7 +12,7 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server xorg-xinput neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse shell-color-scripts pacman-contrib cronie xorg-server xorg-xinit xorg-xinput neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -93,3 +93,25 @@ sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
 sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 
 sudo mkinitcpio -P
+
+echo "enable autologin? (username is set to denny)"
+
+read decision3
+
+if [ "$decision3" = "y" ]; then
+    sleep 1
+elif [ "$decision3" = "n" ]; then
+    exit
+else
+    echo "accepted answers are y/n" && exit
+fi
+
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+
+sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/usr/bin/agetty --skip-login --nonewline --noissue --autologin denny --noclear %I \$TERM\nType=simple' >> /etc/systemd/system/getty@tty1.service.d/override.conf"
+
+touch ~/.hushlogin
+
+sudo sh -c "echo -e 'allowed_users = anybody\nneeds_root_rights = yes' >> /etc/X11/Xwrapper.config"
+
+sudo chmod u+s /usr/lib/Xorg.wrap
