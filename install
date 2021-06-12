@@ -12,7 +12,7 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit xorg-xinput neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation t2ec
+yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit xorg-xinput neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
