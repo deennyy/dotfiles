@@ -40,6 +40,8 @@ sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
 
 sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
 
+sudo cp other-configs/etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d
+
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
@@ -59,8 +61,6 @@ sudo systemctl enable --now sshd
 sudo cp -f other-configs/etc/pacman.conf /etc
 
 sudo sh -c "echo 'vm.swappiness=10' >> /etc/sysctl.d/99-swappiness.conf"
-
-sudo sh -c "echo 'needs_root_rights = no' >> /etc/X11/Xwrapper.config"
 
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
@@ -94,7 +94,7 @@ sudo cp -f other-configs/etc/mkinitcpio.conf /etc
 
 sudo mkinitcpio -P
 
-echo "enable autologin? (username is set to denny)"
+echo "enable autologin? (username is set to denny) [y/n]"
 
 read decision3
 

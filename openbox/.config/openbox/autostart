@@ -23,7 +23,7 @@ feh --bg-scale --no-fehbg ~/.wallpaper.jpg &
 numlockx &
 redshift -l 42.698334:23.319941 &
 dunst &
-setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:alt_shift_toggle &
 conky &
 unclutter &
 ~/.local/bin/volctlsh &
+~/.local/bin/polybar.sh
