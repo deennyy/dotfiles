@@ -35,7 +35,8 @@ height = 25
 background = #4f2d2d2d
 foreground = #eeeeee
 
-line-size = 2
+border-size = 0
+radius = 0.0
 
 padding-right = 1
 
@@ -107,6 +108,8 @@ label = %title:0:30:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
+blacklist-1 = caps lock
+blacklist-2 = scroll lock
 
 format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
@@ -444,10 +447,10 @@ format-underline = #6363cc
 
 [module/ewmh]
 type = internal/xworkspaces
-pin-workspaces = true
+pin-workspaces = false
 enable-click = false
 enable-scroll = false
-label-active-underline = #6363cc
+label-active-foreground = #6363cc
 label-active-padding-right = 1
 label-occupied-padding-right = 1
 label-urgent-padding-right = 1
