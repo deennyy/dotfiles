@@ -24,8 +24,6 @@ set -o vi
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
 
-colorscript random
-
 precmd() { eval "$PROMPT_COMMAND" }
 
 PROMPT_COMMAND='printf "\033]0;%s@%s:%s\007" "${USER}" "${HOST}" "${PWD/#$HOME/~}"'
