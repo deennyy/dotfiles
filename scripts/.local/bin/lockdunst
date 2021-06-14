@@ -3,8 +3,6 @@
 dunstctl set-paused true
 pactl set-sink-mute @DEFAULT_SINK@ 1
 
-sleep 2
-
 i3lock -S 1 -B 10 -k --time-color=eeeeee --date-color=eeeeee --time-pos="x+95:y+h-95" --inside-color=00000000 --insidever-color=00000000 --ring-color=2d2d2d --keyhl-color=6363cc --line-color=00000000 --ringver-color=6363cc --verif-color=eeeeee --date-str="%a %d.%m" --insidewrong-color=00000000 --wrong-color=eeeeee --ringwrong-color=ff1010
 
 while killall -0 i3lock 2> /dev/null; do

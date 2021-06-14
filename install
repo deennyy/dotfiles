@@ -60,6 +60,8 @@ sudo systemctl enable --now sshd
 
 sudo cp -f other-configs/etc/pacman.conf /etc
 
+sudo pacman -Syu
+
 sudo sh -c "echo 'vm.swappiness=10' >> /etc/sysctl.d/99-swappiness.conf"
 
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"

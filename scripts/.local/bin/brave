@@ -2,7 +2,7 @@
 
 xdg-open https:// &
 
-sleep 0.4
+sleep 0.6
 
 brave_id="$(xdotool search --class Brave-browser | tail -n 1)"
 
