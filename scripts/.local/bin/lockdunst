@@ -1,5 +1,6 @@
 #!/bin/sh
 
+xkb-switch -s us
 dunstctl set-paused true
 pactl set-sink-mute @DEFAULT_SINK@ 1
 
