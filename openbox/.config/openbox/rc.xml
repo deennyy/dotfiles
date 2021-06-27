@@ -460,11 +460,6 @@
         <command>~/.local/bin/rofiunmount</command>
       </action>
     </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>~/.local/bin/rofivpn</command>
-      </action>
-    </keybind>
     <keybind key="Print">
       <action name="Execute">
         <command>flameshot full -c</command>
