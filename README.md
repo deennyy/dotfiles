@@ -8,6 +8,6 @@ The install script will automatically install needed packages and set up everyth
 You can ignore the hardware specific configs and autologin options, those are specific for me.
 
 # Usage
-```stow -t ~ openbox rofi tint2 dunst``` <br>
+```stow -t ~ openbox rofi tint2 dunst ...``` <br>
 or just <br>
 ```stow -t ~ *```
