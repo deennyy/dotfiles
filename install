@@ -12,7 +12,7 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-yay -S --needed wget stow dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto lxappearance galendae-git gtk2-perl lxappearance-obconf gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation xkb-switch pulsemixer
+yay -S --needed wget dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto galendae-git perl-gtk3 gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation alsa-utils
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -24,15 +24,13 @@ mv Afterpiece ~/.themes
 
 touch "$HOME/.cache/zshhistory"
 
-chsh $USER
+chsh -s /bin/zsh $USER
 
 sudo sed -i "31i Path askpass /usr/lib/seahorse/ssh-askpass" /etc/sudo.conf
 
 git clone https://github.com/deennyy/other-configs
 
 sudo cp -f other-configs/usr/share/applications/* /usr/share/applications
-
-sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
 
 sudo mkdir -p /etc/X11/xorg.conf.d
 
@@ -62,14 +60,12 @@ sudo cp -f other-configs/etc/pacman.conf /etc
 
 sudo pacman -Syu
 
-sudo sh -c "echo 'vm.swappiness=10' >> /etc/sysctl.d/99-swappiness.conf"
-
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
 read decision2
 
 if [ "$decision2" = "y" ]; then
-    echo "X11 likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems"
+    echo "Xorg likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems"
     echo "also the gamemode config has a GPU OC applied, which might crash on your GPU, be sure to disable it"
     echo "sleeping 5 seconds..." && sleep 5
 elif [ "$decision2" = "n" ]; then
@@ -78,7 +74,9 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
+
+sudo pacman -S --needed nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 
 sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xkb-switch -s us
+setxkbmap us
 dunstctl set-paused true
 pactl set-sink-mute @DEFAULT_SINK@ 1
 
@@ -10,5 +10,6 @@ while killall -0 i3lock 2> /dev/null; do
     sleep 1
 done
 
+setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option grp:alt_shift_toggle
 dunstctl set-paused false
 pactl set-sink-mute @DEFAULT_SINK@ 0

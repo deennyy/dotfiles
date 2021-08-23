@@ -432,12 +432,12 @@
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +2%</command>
+        <command>~/.local/bin/volctl up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>pactl set-sink-volume @DEFAULT_SINK@ -2%</command>
+	<command>~/.local/bin/volctl down</command>
       </action>
     </keybind>
     <keybind key="W-l">

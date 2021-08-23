@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mouse_pos="$(xdotool getmouselocation | sed -E "s/ screen:0 window:[^ ]*|x:|y://g" | rev | cut -c5- | rev)"
+mouse_pos="$(xdotool getmouselocation | sed -E "s/ screen:0 window:[^ ]*|x:|y:[^ ]*//g")"
 
 [ $mouse_pos -gt 1920 ] && galendae -c ~/.config/galendae/galendae-r.conf && exit
 

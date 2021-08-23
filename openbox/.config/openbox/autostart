@@ -16,11 +16,12 @@
 #
 #xfce-mcs-manager &
 
+feh --bg-scale --no-fehbg ~/.wallpaper.jpg
+numlockx
+
 picom &
 tint2 &
-feh --bg-scale --no-fehbg ~/.wallpaper.jpg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-numlockx &
 redshift -l 42.698334:23.319941 &
 dunst &
 conky &
