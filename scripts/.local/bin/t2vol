@@ -1,0 +1,14 @@
+#!/bin/sh
+
+trap 'update' 5
+
+update() { \
+    amixer -M get Master | awk -F'[][]' 'NR==6 {print $2}' &
+    wait
+}
+
+while :; do
+    update
+    sleep 3600 &
+    wait
+done

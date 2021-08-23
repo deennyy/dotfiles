@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case $1 in
+    up)
+    pactl set-sink-volume @DEFAULT_SINK@ +2%
+    kill -5 $(pgrep -f "/bin/sh /home/denny/.local/bin/t2vol")
+    exit
+    ;;
+    down)
+    pactl set-sink-volume @DEFAULT_SINK@ -2%
+    kill -5 $(pgrep -f "/bin/sh /home/denny/.local/bin/t2vol")
+    exit
+    ;;
+    lowup)
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
+    kill -5 $(pgrep -f "/bin/sh /home/denny/.local/bin/t2vol")
+    exit
+    ;;
+    lowdown)
+    pactl set-sink-volume @DEFAULT_SINK@ -1%
+    kill -5 $(pgrep -f "/bin/sh /home/denny/.local/bin/t2vol")
+    exit
+    ;;
+esac
