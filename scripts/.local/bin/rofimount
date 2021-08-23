@@ -33,7 +33,7 @@ mountusb() { \
 
 mountandroid() { \
 	chosen="$(echo "$anddrives" | rofi -i -p "Which Android device?" -dmenu)" || exit 1
-	chosen="$(echo "$chosen" | awk '{print $1 $2}' | rev | cut -c2- | rev)"
+	chosen="$(echo "$chosen" | awk '{print $1 $2}' | cut -d',' -f1,2)"
 	getmount "/mnt /media /mount /home -maxdepth 2 -type d"
 #        jmtpfs -device="$chosen" "$mp"
 	echo "OK" | rofi -i -p "Tap Allow on your phone if it asks for permission and then press enter" -dmenu || exit 1
@@ -49,7 +49,7 @@ asktype() { \
 	esac
 	}
 
-anddrives=$(jmtpfs -l | sed -n '2,$p' 2>/dev/null)
+anddrives=$(jmtpfs -l 2>/dev/null)
 usbdrives="$(lsblk -rpo "name,type,size,mountpoint" | grep 'part\|rom' | awk '$4==""{printf "%s (%s)\n",$1,$3}')"
 
 if [ -z "$usbdrives" ]; then
