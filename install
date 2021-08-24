@@ -1,18 +1,43 @@
 #!/bin/sh
 
-echo "have you run stow yet? (y/n)"
-
-read decision
-
-if [ "$decision" = "y" ]; then
-    echo "make sure you have yay installed, sleeping 5 seconds" && sleep 5
-elif [ "$decision" = "n" ]; then
-    echo "please stow first then run this script" && exit
+if [ "$EUID" = 0 ]; then
+    echo "do not run this script as root, run it as your normal user"
+    exit
 else
-    echo "accepted answers are y/n" && exit
+    sleep 1
 fi
 
-yay -S --needed wget dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto galendae-git perl-gtk3 gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation alsa-utils
+if [ ${PWD} = $HOME ]; then
+    sleep 1
+else
+    echo "this script should be run from inside your home directory"
+    echo "move it to ~ and execute again"
+    exit
+fi
+
+sudo pacman -S --needed --noconfirm base-devel git stow
+
+git clone https://aur.archlinux.org/yay-bin.git
+
+cd yay-bin/
+
+makepkg -si
+
+cd ~/
+
+cd dotfiles/
+
+rm README.md screenshot.png
+
+stow -t ~ *
+
+git checkout HEAD README.md
+git checkout HEAD screenshot.png
+git checkout HEAD install
+
+cd ~/
+
+yay -S --needed --noconfirm --answerdiff None --removemake wget dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color flameshot numlockx redshift ttf-roboto galendae-git perl-gtk3 gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit xorg-setxkbmap neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation alsa-utils
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -27,6 +52,8 @@ touch "$HOME/.cache/zshhistory"
 chsh -s /bin/zsh $USER
 
 sudo sed -i "31i Path askpass /usr/lib/seahorse/ssh-askpass" /etc/sudo.conf
+
+sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
 
 git clone https://github.com/deennyy/other-configs
 
@@ -62,21 +89,19 @@ sudo pacman -Syu
 
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
-read decision2
+read decision
 
-if [ "$decision2" = "y" ]; then
+if [ "$decision" = "y" ]; then
     echo "Xorg likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems"
     echo "also the gamemode config has a GPU OC applied, which might crash on your GPU, be sure to disable it"
     echo "sleeping 5 seconds..." && sleep 5
-elif [ "$decision2" = "n" ]; then
+elif [ "$decision" = "n" ]; then
     exit
 else
     echo "accepted answers are y/n" && exit
 fi
 
-sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
-
-sudo pacman -S --needed nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -S --needed --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 
 sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
 
@@ -96,11 +121,11 @@ sudo mkinitcpio -P
 
 echo "enable autologin? (username is set to denny) [y/n]"
 
-read decision3
+read decision2
 
-if [ "$decision3" = "y" ]; then
+if [ "$decision2" = "y" ]; then
     sleep 1
-elif [ "$decision3" = "n" ]; then
+elif [ "$decision2" = "n" ]; then
     exit
 else
     echo "accepted answers are y/n" && exit
