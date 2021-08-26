@@ -27,12 +27,14 @@ cd ~/
 
 cd dotfiles/
 
-rm README.md screenshot.png
+rm README.md screenshot.png install
 
 stow -t ~ *
 
 git checkout HEAD README.md
+
 git checkout HEAD screenshot.png
+
 git checkout HEAD install
 
 cd ~/
