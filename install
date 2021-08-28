@@ -89,6 +89,10 @@ sudo cp -f other-configs/etc/pacman.conf /etc
 
 sudo pacman -Syu
 
+sudo sh -c "echo '*               hard    nice            -19' >> /etc/security/limits.conf"
+
+sudo sh -c "echo 'root            hard    nice            -20' >> /etc/security/limits.conf"
+
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
 read decision
