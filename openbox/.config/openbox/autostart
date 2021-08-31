@@ -17,7 +17,7 @@
 #xfce-mcs-manager &
 
 feh --bg-scale --no-fehbg ~/.wallpaper.jpg
-numlockx
+# numlockx
 
 picom &
 tint2 &

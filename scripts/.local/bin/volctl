@@ -5,6 +5,8 @@ current_vol=$(amixer -M get Master | awk -F'[][]' 'NR==6 {print $2}' | tr -d "%"
 case $1 in
     up)
     if [ $current_vol -ge 100 ]; then
+	pactl set-sink-volume @DEFAULT_SINK@ 100%
+	kill -5 $(pgrep -f "/bin/sh /home/denny/.local/bin/t2vol")
 	exit
     else
 	pactl set-sink-volume @DEFAULT_SINK@ +2%

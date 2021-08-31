@@ -5,3 +5,6 @@ x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
 text/plain=open-neovim.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
+application/pdf=brave-browser.desktop
