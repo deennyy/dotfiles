@@ -1,39 +1,49 @@
 * {
-    text-color:			#eeeeee;
-    background-color:		#2d2d2d;
-    bordercolor:		#6363cc;
-    selected-normal-background: @bordercolor;
-    selected-normal-foreground: @text-color;
+    text-color:			 #eeeeee;
+    background-color:		 #2d2d2d;
+    bordercolor:		 #6363cc;
+    selected-normal-background:  @bordercolor;
+    selected-normal-foreground:  @text-color;
+    normal-background:		 @background-color;
+    normal-foreground:		 @text-color;
+    alternate-normal-background: @background-color;
+    alternate-normal-foreground: @text-color;
+    separatorcolor:		 rgba(0, 0, 0, 0%);
 }
 #window {
-    background-color: 		@background-color;
-    text-color:	      		@text-color;
-    padding:	      		6;
-    border:	      		3;
-    border-color:     		@bordercolor;
+    background-color: 		 @background-color;
+    text-color:	      		 @text-color;
+    padding:	      		 6;
+    border:	      		 3;
+    border-color:     		 @bordercolor;
 }
 #element.selected.normal {
-    background-color: 		@selected-normal-background;
-    text-color:       		@selected-normal-foreground;
+    background-color: 		 @selected-normal-background;
+    text-color:       		 @selected-normal-foreground;
 }
 #case-indicator {
-    spacing:    		0;
-    text-color: 		@text-color;
+    spacing:    		 0;
+    text-color: 		 @text-color;
 }
 #entry {
-    spacing:   			0;
-    text-color: 		@text-color;
+    spacing:   			 0;
+    text-color: 		 @text-color;
+    placeholder:       		 "";
 }
 #prompt {
-    spacing:    		0;
-    text-color: 		@text-color;
+    spacing:    		 0;
+    text-color: 		 @text-color;
 }
 #inputbar {
-    children:   		[ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children:   		 [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#scrollbar {
+    width:        		 0px;
+    handle-width: 		 0px;
 }
 #textbox-prompt-colon {
-    expand:     		false;
-    str:        		":";
-    margin:     		0px 0.3em 0em 0em ;
-    text-color: 		@text-color;
+    expand:     		 false;
+    str:        		 ":";
+    margin:     		 0px 0.3em 0em 0em ;
+    text-color: 		 @text-color;
 }
