@@ -3,12 +3,12 @@
 trap 'update' 5
 
 update() { \
-    amixer -M get Master | awk -F'[][]' 'NR==6 {print $2}' &
+    vol=$(amixer -M get Master | awk -F'[][]' 'NR==6 {print $2}')
+    dunstify --replace=69 $vol &
     wait
 }
 
 while :; do
-    update
-    sleep 3600 &
+    sleep 1d &
     wait
 done

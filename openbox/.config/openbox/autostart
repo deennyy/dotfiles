@@ -26,3 +26,4 @@ redshift -l 42.698334:23.319941 &
 dunst &
 conky &
 unclutter &
+~/.local/bin/t2vol &
