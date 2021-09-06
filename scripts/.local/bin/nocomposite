@@ -1,6 +1,6 @@
 #!/bin/sh
 
 killall picom
-#killall conky
+killall conky
 #nvidia-settings --assign CurrentMetaMode="HDMI-0: 1920x1080_60 +0+0 {ForceCompositionPipeline=Off}, DVI-D-0: 1440x900_60 +1920+180 {ForceCompositionPipeline=Off}"
-#dunstctl set-paused true
+dunstctl set-paused true
