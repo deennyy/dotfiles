@@ -432,12 +432,12 @@
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>~/.local/bin/volctl up</command>
+        <command>~/.local/bin/volctl +2%</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-	<command>~/.local/bin/volctl down</command>
+	<command>~/.local/bin/volctl -2%</command>
       </action>
     </keybind>
     <keybind key="W-l">
