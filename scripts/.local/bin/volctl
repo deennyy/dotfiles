@@ -1,5 +1,5 @@
 #!/bin/sh
 
-pactl set-sink-volume @DEFAULT_SINK@ "$@" > /dev/null
+[ "$@" = "+2%" -a "$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -d "%")" -ge 100  ] || pactl set-sink-volume @DEFAULT_SINK@ "$@" > /dev/null
 
-dunstify -r 69 "$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
+dunstify -r 69 "Volume: $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}')"
