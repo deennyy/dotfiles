@@ -1,0 +1,4 @@
+#!/bin/sh
+
+selection=$(slop -r crosshair -t 0 -f "-i %i -g %g" )
+shotgun $selection - | xclip -t 'image/png' -selection clipboard

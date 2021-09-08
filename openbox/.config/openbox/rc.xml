@@ -422,14 +422,14 @@
     </keybind>
     <keybind key="S-W-s">
       <action name="Execute">
-        <command>flameshot gui</command>
+        <command>~/.local/bin/screen</command>
       </action>
     </keybind>
-    <keybind key="C-A-space">
+    <!--    <keybind key="C-A-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>~/.local/bin/volctl +2%</command>
