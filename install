@@ -59,33 +59,11 @@ git clone https://github.com/deennyy/other-configs
 
 sudo cp other-configs/usr/share/applications/open-neovim.desktop /usr/share/applications
 
-sudo mkdir -p /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d
-
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 sudo ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 
 sudo fc-cache -fv
-
-sudo systemctl enable --now fstrim.timer
-
-sudo systemctl enable --now paccache.timer
-
-sudo systemctl enable --now cronie
-
-sudo systemctl enable --now systemd-timesyncd
-
-sudo systemctl enable --now sshd
-
-sudo cp -f other-configs/etc/pacman.conf /etc
-
-sudo pacman -Syu
 
 echo "would you like to copy hardware specific configs? (nvidia stuff) [y/n]"
 
@@ -101,9 +79,31 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
+sudo systemctl enable --now fstrim.timer
+
+sudo systemctl enable --now paccache.timer
+
+sudo systemctl enable --now cronie
+
+sudo systemctl enable --now systemd-timesyncd
+
+sudo systemctl enable --now sshd
+
+sudo cp -f other-configs/etc/pacman.conf /etc
+
+sudo pacman -Syu
+
+sudo mkdir -p /etc/X11/xorg.conf.d
+
+sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
+
+sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
+
+sudo cp other-configs/etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d
+
 sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
 
-sudo sh -c "echo 'denny           -       nice            -19' >> /etc/security/limits.conf"
+sudo sh -c "echo 'denny           -       nice            -20' >> /etc/security/limits.conf"
 
 sudo pacman -S --needed --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
 
