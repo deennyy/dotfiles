@@ -14,7 +14,7 @@ void main()
     float borderSize = 2;
     // The smaller this value is, the more intense the magnification!
     float magnifyNerf = 1.5;
-    vec4 borderColor = vec4(0,0,0,1);
+    vec4 borderColor = vec4(0.17,0.17,0.17,1);
     bool crosshair = true;
 
     // actual code

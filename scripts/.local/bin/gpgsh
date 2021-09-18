@@ -1,0 +1,21 @@
+#!/bin/sh
+
+action=$(printf "Encrypt\\nDecrypt\\nExport\\nImport\\nVerify\\nSign" | rofi -i -p "Action?" -dmenu)
+
+if [ "$action" = "Decrypt" ]; then
+    xclip -selection clipboard -o | gpg --decrypt | xclip -selection clipboard
+elif [ "$action" = "Encrypt" ]; then
+    recipient=$(gpg --list-keys | grep ^uid | awk -F'[][]' '{print $3}' | cut -d' ' -f2- | rofi -i -p "Recipient?" -dmenu)
+    xclip -selection clipboard -o | gpg --trust-model always --armor --recipient "$recipient" --encrypt | xclip -selection clipboard
+elif [ "$action" = "Export" ]; then
+    uid=$(gpg --list-keys | grep ^uid | awk -F'[][]' '{print $3}' | cut -d' ' -f2- | rofi -i -p "Key?" -dmenu)
+    gpg --export --armor "$uid" | xclip -selection clipboard
+elif [ "$action" = "Import" ]; then
+    xclip -selection clipboard -o | gpg --import
+elif [ "$action" = "Verify" ]; then
+    xclip -selection clipboard -o | gpg --verify 
+    exitcode=$?
+    [ $exitcode -eq 0 ] && notify-send "GPG" "Valid signature" || notify-send "GPG" "WARNING!!! Invalid signature"
+elif [ "$action" = "Sign" ]; then
+    xclip -selection clipboard -o | gpg --clearsign | xclip -selection clipboard
+fi

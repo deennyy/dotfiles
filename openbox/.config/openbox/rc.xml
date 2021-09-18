@@ -460,11 +460,11 @@
         <command>~/.local/bin/rofiunmount</command>
       </action>
     </keybind>
-    <keybind key="Print">
+    <!--    <keybind key="Print">
       <action name="Execute">
         <command>flameshot full -c</command>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="W-c">
       <action name="Execute">
         <command>~/.local/bin/roficomposite</command>
