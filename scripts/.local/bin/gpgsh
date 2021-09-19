@@ -1,12 +1,24 @@
 #!/bin/sh
 
-action=$(printf "Encrypt\\nDecrypt\\nExport\\nImport\\nVerify\\nSign" | rofi -i -p "Action?" -dmenu)
+action=$(printf "Encrypt\\nDecrypt\\nExport\\nImport\\nVerify\\nSign\\nCreate" | rofi -i -p "Action?" -dmenu)
 
 if [ "$action" = "Decrypt" ]; then
-    xclip -selection clipboard -o | gpg --decrypt | xclip -selection clipboard
+    data=$(xclip -selection clipboard -o | gpg --decrypt)
+    exitcode=$?
+    if [ $exitcode -eq 0 ]; then
+	notify-send "GPG" "Decryption success/Valid signature"
+	echo "$data" | xclip -selection clipboard
+    else
+	notify-send "GPG" "WARNING!!! Decryption failed/Invalid signature"
+    fi
 elif [ "$action" = "Encrypt" ]; then
+    sign=$(printf "Yes\\nNo" | rofi -i -p "Also sign?" -dmenu)
     recipient=$(gpg --list-keys | grep ^uid | awk -F'[][]' '{print $3}' | cut -d' ' -f2- | rofi -i -p "Recipient?" -dmenu)
-    xclip -selection clipboard -o | gpg --trust-model always --armor --recipient "$recipient" --encrypt | xclip -selection clipboard
+    if [ "$sign" = "Yes" ]; then
+        xclip -selection clipboard -o | gpg --sign --trust-model always --armor --recipient "$recipient" --encrypt | xclip -selection clipboard
+    elif [ "$sign" = "No" ]; then
+	xclip -selection clipboard -o | gpg --trust-model always --armor --recipient "$recipient" --encrypt | xclip -selection clipboard
+    fi
 elif [ "$action" = "Export" ]; then
     uid=$(gpg --list-keys | grep ^uid | awk -F'[][]' '{print $3}' | cut -d' ' -f2- | rofi -i -p "Key?" -dmenu)
     gpg --export --armor "$uid" | xclip -selection clipboard
@@ -18,4 +30,14 @@ elif [ "$action" = "Verify" ]; then
     [ $exitcode -eq 0 ] && notify-send "GPG" "Valid signature" || notify-send "GPG" "WARNING!!! Invalid signature"
 elif [ "$action" = "Sign" ]; then
     xclip -selection clipboard -o | gpg --clearsign | xclip -selection clipboard
+elif [ "$action" = "Create" ]; then
+    name=$(rofi -i -p "Name?" -dmenu)
+    gpg --batch --gen-key <<EOF
+    Key-Type: 1
+    Key-Length: 4096
+    Subkey-Type: 1
+    Subkey-Length: 4096
+    Name-Real: $name
+    Expire-Date: 0
+EOF
 fi
