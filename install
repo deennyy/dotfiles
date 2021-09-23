@@ -17,9 +17,9 @@ fi
 
 sudo pacman -S --needed --noconfirm base-devel git stow
 
-git clone https://aur.archlinux.org/yay-bin.git
+git clone https://aur.archlinux.org/yay.git
 
-cd yay-bin/
+cd yay/
 
 makepkg -si
 
@@ -39,7 +39,7 @@ git checkout HEAD install
 
 cd ~/
 
-yay -S --needed --noconfirm --answerdiff None --removemake wget dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color slop shotgun xclip redshift ttf-roboto galendae-git perl-gtk3 gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server xorg-xinit xorg-setxkbmap xorg-xrdb neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
+yay -S --needed --noconfirm --answerdiff None --removemake wget dunst obmenu-generator openbox picom tint2 feh polkit-gnome xdotool i3lock-color slop shotgun xclip redshift ttf-roboto galendae-git perl-gtk3 gnome-keyring papirus-icon-theme ttf-roboto-mono ttf-roboto-slab alacritty pcmanfm brave-bin rofi zsh zsh-syntax-highlighting jmtpfs seahorse pacman-contrib cronie xorg-server lightdm xorg-setxkbmap xorg-xrdb neovim unclutter openssh noto-fonts-cjk noto-fonts-emoji htop curl git conky file-roller p7zip unrar neofetch yaru-colors-gtk-theme pulseaudio pulseaudio-alsa pavucontrol ttf-liberation
 
 wget https://cdn.discordapp.com/attachments/835125164572016661/842410994840240198/Afterpiece.tar.gz
 
@@ -58,6 +58,8 @@ sudo sed -i "31i Path askpass /usr/lib/seahorse/ssh-askpass" /etc/sudo.conf
 git clone https://github.com/deennyy/other-configs
 
 sudo cp other-configs/usr/share/applications/open-neovim.desktop /usr/share/applications
+
+sudo cp other-configs/usr/share/applications/arch-icon.desktop /usr/share/applications
 
 sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
@@ -135,12 +137,12 @@ else
     echo "accepted answers are y/n" && exit
 fi
 
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo groupadd -r autologin
 
-sudo sh -c "echo -e '[Service]\nExecStart=\nExecStart=-/usr/bin/agetty --skip-login --nonewline --noissue --autologin denny --noclear %I \$TERM\nType=simple' >> /etc/systemd/system/getty@tty1.service.d/override.conf"
+sudo gpasswd -a denny autologin
 
-touch ~/.hushlogin
+sudo sed -i 's/#autologin-user=/autologin-user=denny/' /etc/lightdm/lightdm.conf
 
-sudo sh -c "echo -e 'allowed_users = anybody\nneeds_root_rights = yes' >> /etc/X11/Xwrapper.config"
+sudo sed -i 's/#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
 
-sudo chmod u+s /usr/lib/Xorg.wrap
+sudo systemctl enable lightdm

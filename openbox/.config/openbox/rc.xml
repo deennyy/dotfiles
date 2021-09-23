@@ -475,6 +475,11 @@
         <command>alacritty -e htop</command>
       </action>
     </keybind>
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>~/.local/bin/gpgsh</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
