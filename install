@@ -111,10 +111,6 @@ sudo pacman -S --needed --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidi
 
 sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
 
-sudo mkdir -p /etc/pacman.d/hooks
-
-sudo cp other-configs/etc/pacman.d/hooks/nvidia.hook /etc/pacman.d/hooks
-
 sudo cp other-configs/etc/gamemode.ini /etc
 
 sudo cp -f other-configs/etc/makepkg.conf /etc
