@@ -944,5 +944,12 @@
       </position>
       <maximized>true</maximized>
     </application>
+    <application title="Visual Studio Code">
+      <position force="yes">
+        <x>0</x>
+	<y>0</y>
+      </position>
+      <maximized>true</maximized>
+    </application>
   </applications>
 </openbox_config>
