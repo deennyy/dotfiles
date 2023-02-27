@@ -3,13 +3,9 @@
 if [ "$EUID" = 0 ]; then
     echo "do not run this script as root, run it as your normal user"
     exit
-else
-    sleep 1
 fi
 
-if [ ${PWD} = $HOME ]; then
-    sleep 1
-else
+if [ ${PWD} != $HOME ]; then
     echo "this script should be run from inside your home directory"
     echo "move it to ~ and execute again"
     exit
@@ -27,7 +23,7 @@ cd ~/
 
 cd dotfiles/
 
-rm README.md screenshot.png install
+rm README.md screenshot.png
 
 stow -t ~ *
 
@@ -75,82 +71,94 @@ if [ "$decision" = "y" ]; then
     echo "Xorg likely wont start for you, as the nvidia config is highly specific for me, delete it if you're having problems"
     echo "also the gamemode config has a GPU OC applied, which might crash on your GPU, be sure to disable it"
     echo "sleeping 5 seconds..." && sleep 5
+
+    sudo systemctl enable --now fstrim.timer
+    
+    sudo systemctl enable --now paccache.timer
+    
+    sudo systemctl enable --now cronie
+    
+    sudo systemctl enable --now systemd-timesyncd
+    
+    sudo systemctl enable --now sshd
+    
+    sudo cp -f other-configs/etc/pacman.conf /etc
+    
+    sudo pacman -Syu
+    
+    sudo mkdir -p /etc/X11/xorg.conf.d
+    
+    sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
+    
+    sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
+    
+    sudo cp other-configs/etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d
+    
+    sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
+    
+    sudo sh -c "echo 'denny           -       nice            -20' >> /etc/security/limits.conf"
+    
+    sudo sh -c "echo 'denny           -       rtprio          99' >> /etc/security/limits.conf"
+    
+    sudo mkdir -p /etc/sysctl.d
+    
+    sudo sh -c "echo 'vm.dirty_ratio = 4' >> /etc/sysctl.d/10-dirty.conf"
+    
+    sudo sh -c "echo 'vm.dirty_background_ratio = 2' >> /etc/sysctl.d/10-dirty.conf"
+    
+    sudo mkdir -p /etc/pacman.d/hooks
+    
+    sudo cp other-configs/etc/pacman.d/hooks/nvidia.hook /etc/pacman.d/hooks
+    
+    sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+    
+    sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
+    
+    sudo cp other-configs/etc/gamemode.ini /etc
+    
+    sudo cp -f other-configs/etc/makepkg.conf /etc
+    
+    sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
+    
+    sudo cp -f other-configs/etc/mkinitcpio.conf /etc
+    
+    sudo mkinitcpio -P
+
+    echo "enable autologin? (username is set to denny) [y/n]"
+    
+    read decision2
+    
+    if [ "$decision2" = "n" ]; then
+        exit
+    fi
+    
+    sudo groupadd -r autologin
+    
+    sudo gpasswd -a denny autologin
+    
+    sudo sed -i 's/#autologin-user=/autologin-user=denny/' /etc/lightdm/lightdm.conf
+    
+    sudo sed -i 's/#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
+    
+    sudo systemctl enable lightdm
 elif [ "$decision" = "n" ]; then
-    exit
+    echo "enable autologin? (username is set to denny) [y/n]"
+    
+    read decision2
+    
+    if [ "$decision2" = "n" ]; then
+        exit
+    fi
+    
+    sudo groupadd -r autologin
+    
+    sudo gpasswd -a denny autologin
+    
+    sudo sed -i 's/#autologin-user=/autologin-user=denny/' /etc/lightdm/lightdm.conf
+    
+    sudo sed -i 's/#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
+    
+    sudo systemctl enable lightdm
 else
     echo "accepted answers are y/n" && exit
 fi
-
-sudo systemctl enable --now fstrim.timer
-
-sudo systemctl enable --now paccache.timer
-
-sudo systemctl enable --now cronie
-
-sudo systemctl enable --now systemd-timesyncd
-
-sudo systemctl enable --now sshd
-
-sudo cp -f other-configs/etc/pacman.conf /etc
-
-sudo pacman -Syu
-
-sudo mkdir -p /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/10-monitor.conf /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/50-mouse-acceleration.conf /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d
-
-sudo sh -c "echo 'source /home/denny/.config/nvim/init.vim' >> /etc/xdg/nvim/sysinit.vim"
-
-sudo sh -c "echo 'denny           -       nice            -20' >> /etc/security/limits.conf"
-
-sudo sh -c "echo 'denny           -       rtprio          99' >> /etc/security/limits.conf"
-
-sudo mkdir -p /etc/sysctl.d
-
-sudo sh -c "echo 'vm.dirty_ratio = 4' >> /etc/sysctl.d/10-dirty.conf"
-
-sudo sh -c "echo 'vm.dirty_background_ratio = 2' >> /etc/sysctl.d/10-dirty.conf"
-
-sudo mkdir -p /etc/pacman.d/hooks
-
-sudo cp other-configs/etc/pacman.d/hooks/nvidia.hook /etc/pacman.d/hooks
-
-sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
-
-sudo cp other-configs/etc/X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d
-
-sudo cp other-configs/etc/gamemode.ini /etc
-
-sudo cp -f other-configs/etc/makepkg.conf /etc
-
-sudo sh -c "echo 'KEYMAP=us' >> /etc/vconsole.conf"
-
-sudo cp -f other-configs/etc/mkinitcpio.conf /etc
-
-sudo mkinitcpio -P
-
-echo "enable autologin? (username is set to denny) [y/n]"
-
-read decision2
-
-if [ "$decision2" = "y" ]; then
-    sleep 1
-elif [ "$decision2" = "n" ]; then
-    exit
-else
-    echo "accepted answers are y/n" && exit
-fi
-
-sudo groupadd -r autologin
-
-sudo gpasswd -a denny autologin
-
-sudo sed -i 's/#autologin-user=/autologin-user=denny/' /etc/lightdm/lightdm.conf
-
-sudo sed -i 's/#autologin-session=/autologin-session=openbox/' /etc/lightdm/lightdm.conf
-
-sudo systemctl enable lightdm
